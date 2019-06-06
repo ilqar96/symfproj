@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block title %}Hello PostController!
+{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Create post</h1>
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+<script></script>
+{% endblock %}

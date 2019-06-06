@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{path('homee')}}">Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{path('post')}}">Posts</a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <span class="navbar-text">
+                    Hello
+                    {{ app.user.username }}
+                </span>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout
+                    </a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register
+                    </a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>
