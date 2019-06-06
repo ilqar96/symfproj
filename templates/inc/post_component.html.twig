@@ -1,0 +1,12 @@
+<div class="card mb-3">
+{#    <img alt="Card image cap" class="card-img-top" src=".../100px180/">#}
+    <div class="card-body">
+        <h5 class="card-title text-uppercase">{{post.title}}</h5>
+        <p class="card-text">{{post.body}}</p>
+        <p class="card-text">
+            <small class="text-muted">Created at {{post.created_at is empty  ? "" : post.created_at|date('d/m/Y H:i', 'Asia/Baku')}}</small>
+            <br>
+            <small class="text-muted">Categorys : {{ post.category }}</small>
+        </p>
+    </div>
+</div>
